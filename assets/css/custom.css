@@ -1,0 +1,53 @@
+@font-face {
+  font-family: '1898Sans';
+  src: url('/assets/fonts/1898Sans-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap; /* Recommended for better performance */
+}
+.f-weight-700 {
+  font-weight: 700;
+}
+body {
+  font-family: '1898Sans', sans-serif;
+}
+
+.hero-subtitle {
+    font-size: 3.5rem;
+    font-weight: 700;
+}
+.primary-color {
+    color: #B31A1B;
+}
+.primary-bg-color {
+    background-color: #B31A1B;
+}
+.clip-path-cut-corner {
+  clip-path: polygon(100% 0%, 0% 0%, 100% 100%);
+}
+.bg-software {
+  background: #F0F2F4;
+}
+.active-tab {
+    background-color: #CF4421;
+    color: white;
+}
+.active-tab:hover {
+    background-color: #B31A1B; /* Keep the same hover color as active */
+}
+.bg-research-collapse {
+  background-color: #F8971D;
+}
+.clip-path-cut-corner-research {
+  clip-path: polygon(0 0, 96% 0, 100% 25%, 100% 100%, 0 100%);
+}
+
+@layer utilities {
+  .clip-diamond {
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  }
+
+  .clip-diagonal {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 70%, 0% 100%);
+  }
+}
