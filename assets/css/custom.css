@@ -1,6 +1,6 @@
 @font-face {
   font-family: '1898Sans';
-  src: url('./assets/fonts/1898Sans-Regular.ttf') format('truetype');
+  src: url('https://shahnawazdaanish.github.io/imeds/assets/fonts/1898Sans-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
   font-display: swap; /* Recommended for better performance */
