@@ -1,18 +1,18 @@
-<section id="software" class="bg-software py-12">
-    <div class="max-w-5xl mx-auto px-4">
-      <h2 class="text-5xl font-bold text-red-700 mb-12">Software</h2>
+<section id="software" class="bg-software pt-12 pb-20 md:pb-60">
+    <div class="max-w-5xl mx-auto px-5">
+      <h2 class="imd-software-title primary-color mb-7">Software</h2>
 
       <!-- Tabbed Interface Container -->
       <div class="flex flex-col lg:flex-row shadow-lg overflow-hidden bg-gray-50 min-h-[277px]">
 
         <!-- Sidebar for Tab Navigation -->
-        <div class="w-full lg:w-2/8 primary-bg-color">
+        <div class="w-full lg:w-7/30 primary-bg-color">
           <!-- Loop through the 'software' collection to create the tab buttons -->
           {% for software in site.software %}
             <button
               id="tab-button-{{ forloop.index }}"
               onclick="showTab('tab-{{ forloop.index }}')"
-              class="w-full text-left py-4 px-6 font-semibold text-xl text-white hover:bg-red-800 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50 border-b-1 border-white border-dashed
+              class="w-full text-left pt-2 pb-1 px-4 imd-software-tab-title text-white hover:bg-red-800 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50 border-b-1 border-white border-dashed
               {% if forloop.first %} active-tab {% endif %}">
               {{ software.title }}
             </button>
@@ -20,27 +20,34 @@
         </div>
 
         <!-- Main Content Area for Tabs -->
-        <div class="w-full lg:w-6/8 p-8 bg-white">
+        <div class="w-full lg:w-23/30 bg-white">
           <!-- Loop through the 'software' collection to create the tab content -->
           {% for software in site.software %}
             <div id="tab-{{ forloop.index }}" class="tab-content {% if forloop.first == false %} hidden {% endif %}">
-              <div class="flex flex-col lg:flex-row space-y-6 lg:space-y-0 lg:space-x-12 items-center">
+              <div class="flex flex-col lg:flex-row space-y-6 lg:space-y-0 lg:space-x-6 items-center  px-8 pt-8 pb-2">
                 
                 <!-- Software Screenshot -->
-                <div class="w-full lg:w-1/2 flex-shrink-0">
+                <div class="w-full lg:w-11/24 flex-shrink-0">
                   <img src="{{ software.image | relative_url }}" alt="{{ software.title }} screenshot" class="w-full shadow-xl">
                 </div>
 
                 <!-- Description and Link -->
-                <div class="w-full lg:w-1/2 flex-grow">
-                  <p class="text-gray-800 text-sm leading-relaxed mb-6">{{ software.description }}</p>
-                  {% if software.link %}
+                <div class="w-full lg:w-15/24 flex-grow">
+                  <p class="text-black imd-software-tab-text leading-relaxed mb-6">{{ software.description }}</p>
+                  <!-- {% if software.link %}
                     <a href="{{ software.link }}" target="_blank" rel="noopener noreferrer" class="text-red-700 hover:text-red-900 font-bold transition-colors duration-200">
                       {{ software.link }}
                     </a>
-                  {% endif %}
+                  {% endif %} -->
                 </div>
               </div>
+              {% if software.link %}
+                <div class="border-t-1 imd-software-link-border border-dashed text-right pt-1 pr-4">
+                  <a href="{{ software.link }}" target="_blank" rel="noopener noreferrer" class="imd-software-tab-text primary-color font-bold transition-colors duration-200">
+                    {{ software.link }}
+                  </a>
+                </div>
+              {% endif %}
             </div>
           {% endfor %}
         </div>

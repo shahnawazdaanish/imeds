@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Toward Cost-efficient Adaptive Clinical Trials in Knee Osteoarthritis with Reinforcement Learning.
+title: "New publication: Toward Cost-efficient Adaptive Clinical Trials in Knee Osteoarthritis with Reinforcement Learning."
 date: 2025-08-05 01:06:00 +0300
 categories: news
 ---

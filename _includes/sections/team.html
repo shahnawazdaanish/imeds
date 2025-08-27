@@ -1,6 +1,6 @@
-<section id="team" class="bg-white py-12">
-  <div class="max-w-5xl mx-auto px-4">
-    <h2 class="text-5xl font-bold text-black mb-12">Team</h2>
+<section id="team" class="bg-white py-14">
+  <div class="max-w-5xl mx-auto px-5">
+    <h2 class="text-black imd-team-title">Team</h2>
 
     {% assign team_roles = site.team | group_by: 'role' %}
     {% if team_roles.size == 0 %}
@@ -8,11 +8,11 @@
     {% endif %}
     
     {% for role in team_roles %}
-      <h3 class="text-4xl font-bold text-red-700 mt-12 mb-8">{{ role.name }}</h3>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <h3 class="font-bold primary-color mt-8 mb-4 imd-team-role">{{ role.name }}</h3>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
         {% for member in role.items %}
-          <div class="flex items-center space-x-6">
-            <div class="flex-shrink-0 w-24 h-24 overflow-hidden border-2 border-red-700">
+          <div class="flex items-center space-x-5">
+            <div class="flex-shrink-0 w-16 h-16 overflow-hidden border-2 border-red-700">
               {% if member.image %}
                 <img src="{{ member.image | relative_url }}" alt="{{ member.name }}" class="w-full h-full object-cover">
               {% else %}
@@ -24,9 +24,9 @@
               {% endif %}
             </div>
             <div>
-              <p class="text-xl font-bold text-black">{{ member.name }}</p>
-              <p class="text-lg text-gray-700">{{ member.position }}</p>
-              <p class="text-base text-gray-500">{{ member.affiliation }}</p>
+              <p class="font-bold text-black imd-team-member-name">{{ member.name }}</p>
+              <p class="imd-team-member-role">{{ member.position }}</p>
+              <p class="imd-team-member-workplace">{{ member.affiliation }}</p>
             </div>
           </div>
         {% endfor %}
@@ -34,8 +34,8 @@
     {% endfor %}
 
     <!-- The main card container -->
-    <div class="border-1 border-gray-300 border-dashed py-4 px-6 mt-8 mx-auto">
-      <div class="flex items-center  space-x-6">
+    <div class="border-1 border-gray-300 border-dashed py-4 px-6 mt-12 mb-2 mx-auto">
+      <div class="flex items-center  space-x-5">
         <!-- Icon section -->
         <div class="flex-shrink-0 flex items-center">
           <!-- Using a simple SVG for the icon. You can replace this with your own icon. -->
@@ -44,8 +44,8 @@
         
         <!-- Text content -->
         <div>
-          <h3 class="text-lg font-bold text-gray-900 mb-2">How to join us?</h3>
-          <p class="text-sm text-gray-700">
+          <h3 class="font-bold text-black imd-team-join-title">How to join us?</h3>
+          <p class="text-black imd-team-join-text">
             As a rule, iMEDS does not accept interns. Please, do not email with applications for internships. PhD students are recruited through
             Cornell Graduate School, and Postdocs recruitment advertisements are made publicly available on website and social media.
           </p>

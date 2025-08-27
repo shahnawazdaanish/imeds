@@ -1,15 +1,15 @@
-<section id="news" class="bg-white py-12">
-  <div class="max-w-5xl mx-auto px-4">
-    <h2 class="text-4xl font-bold text-red-700 mb-8">News</h2>
+<section id="news" class="bg-white pt-2 pb-8">
+  <div class="max-w-5xl mx-auto px-5">
+    <h2 class="page-title primary-color mb-11">News</h2>
 
     {% assign news_posts = site.posts | where:"categories", "news" %}
     {% for post in news_posts limit:2 %}
         <div class="flex items-start mb-8">
-          <div class="border-l-6 border-red-700 pl-4 pr-6">
-            <p class="text-lg"><span class="font-bold">{{ post.date | date: "%d. %m." }}</span><br/> {{ post.date | date: "%Y" }} </p>
+          <div class="border-l-8 border-red-700 pl-2 pr-10">
+            <p class="imd-news-date-container"><span class="imd-news-date">{{ post.date | date: "%e. %-m." }}</span><br/> {{ post.date | date: "%Y" }} </p>
           </div>
           <div class="flex-1">
-            <p class="text-lg">{{ post.title }}</p>
+            <p class="text-lg imd-news-paragraph text-[13px] md:text-[16px]">{{ post.title }}</p>
           </div>
         </div>
     {% endfor %}
