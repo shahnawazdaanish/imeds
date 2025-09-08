@@ -19,6 +19,10 @@ body {
   font-size: 1.063rem;
 }
 
+.navbar a:hover {
+  color: #E7751D;
+}
+
 .hero-title {
   font-weight: 700;
   line-height: 58px;
@@ -80,6 +84,9 @@ body {
   color: #121212;
 }
 
+/* #research {
+  max-height: 800px;
+} */
 .imd-research-title {
   font-size: 38px;
   font-weight: 700;
@@ -95,6 +102,19 @@ body {
 .imd-research-box-kw {
   letter-spacing: 0.2px;
   line-height: 0.75;
+}
+
+.publications-list-content {
+  max-height: 0;
+  overflow: hidden;
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 0.3s ease;
+  margin-bottom: 15px;
+}
+.publications-list-content.expanded {
+  transform: scaleY(1);
+  max-height: 300px; /* something larger than content height */
 }
 
 .imd-team-title {

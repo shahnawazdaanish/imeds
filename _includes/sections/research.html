@@ -1,11 +1,11 @@
-<section id="research" class="py-25 relative bg-cover bg-center" style="background-image: url('assets/images/research-back.jpg');">
+<section id="research" class="max-h-[1024px] md:max-h-[800px] py-30 sm:py-25 md:py-25 lg:py-25 relative bg-cover bg-center" style="background-image: url('assets/images/research-back.jpg');">
     <div class="absolute inset-0 bg-black opacity-75"></div>
     <div class="max-w-5xl mx-auto px-5 pb-5 relative z-10">
         <h2 class="text-white mb-5 imd-research-title">Research highlights</h2>
 
         {% for highlight in site.research %}
         <!-- Research Highlight Item n -->
-        <div class="mb-7">
+        <div class="{% if forloop.index0 > 0 %}mt-0 md:mt-1{% endif %}">
             <div class="bg-white shadow-md p-4 clip-path-cut-corner-research relative">
                 <div class="flex items-center space-x-3 mb-2">
                     <!-- Icon -->
@@ -34,7 +34,7 @@
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                 </svg>
             </div>
-            <div id="publications-{{ forloop.index }}" class="hidden bg-gray-50 p-6">
+            <div id="publications-{{ forloop.index }}" class="bg-gray-50 px-4 py-3 publications-list-content">
                 <ul class="list-disc list-inside space-y-2 text-gray-700">
                     {% for publication in highlight.publications %}
                     <li class="text-sm">{{ publication }}</li>
@@ -45,13 +45,31 @@
         {% endfor %}
     </div>
 </section>
-
+<!-- 
 <script>
     // JavaScript to handle the collapsible sections
     function togglePublications(id) {
         const element = document.getElementById(id);
         if (element) {
-            element.classList.toggle('hidden');
+            // element.classList.toggle('hidden');
+            element.classList.toggle('expanded');
+        }
+    }
+</script> -->
+
+<script>
+    // JavaScript to handle the collapsible sections
+    function togglePublications(id) {
+        // Hide all publication sections
+        document.querySelectorAll('[id^="publications-"]').forEach(function(el) {
+            if (el.id !== id) {
+                el.classList.remove('expanded');
+            }
+        });
+        // Toggle the selected publication section
+        const element = document.getElementById(id);
+        if (element) {
+            element.classList.toggle('expanded');
         }
     }
 </script>
